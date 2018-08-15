@@ -37,19 +37,19 @@ class DsMap : public Estimator {
     int map(int e, int s, int c) {
         int l = e+s+c;
         int n = s + 2*c;
-        double next = 0;
-        double prev = -1;
+        long double next = 0;
+        long double prev = -1;
         while (prev < next) {
-            double p1 = P1(e, l, n);
-            double p2 = P2(s, e, l, n);
-            double p3 = 0;
+            long double p1 = P1(e, l, n);
+            long double p2 = P2(s, e, l, n);
+            long double p3 = 0;
             for (int k=0;k<c;++k) {
                 for (int v=0;v<(c-k);++v) {
                     int ck = c - k;
                     int ckv = c - k - v;
                     int ns = n - s;
                     int nsk = n - s - k;
-                    p3 = p3 + (pow(-1, k+v) * ((fat(c)/(fat(k)*fat((ck)))*(fat(ck)/(fat(v)*fat(ckv))*(fat(ns)/fat(nsk))*(pow((ckv), (nsk))/pow(c, (ns)))))));
+                    p3 = p3 + (pow(-1, k+v) * (fat(c)/(fat(k)*fat((ck)))*(fat(ck)/(fat(v)*fat(ckv))*(fat(ns)/fat(nsk))*(pow((ckv), (nsk))/pow(c, (ns))))));
                 }
             }
             prev = next;

@@ -1,7 +1,7 @@
 
 using namespace std;
 
-class Simulator{
+class SimulatorQ{
   private:
     int tagMin;
     int tagMax;
@@ -18,8 +18,8 @@ class Simulator{
     vector<double> Efficiency;
     vector<int> labels;
   public:
-    Simulator(){}
-    Simulator(int tagMin, int tagMax, int tagStep, int repetitions, int slots, Estimator* estimator){
+    SimulatorQ(){}
+    SimulatorQ(int tagMin, int tagMax, int tagStep, int repetitions, int slots, Estimator* estimator){
       this->tagMin = tagMin;
       this->tagMax = tagMax;
       this->tagStep = tagStep;
